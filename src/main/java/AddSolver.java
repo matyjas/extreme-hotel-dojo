@@ -12,9 +12,11 @@ import java.util.regex.Pattern;
  */
 public class AddSolver implements Solver {
 
+    public static final Pattern PATTERN = Pattern.compile(".*what is (\\d+) plus (\\d+)");
+
     @Override
     public Optional<String> answerTo(String question) {
-        Matcher additionMatcher = Pattern.compile(".*what is (\\d+) plus (\\d+)").matcher(question);
+        Matcher additionMatcher = PATTERN.matcher(question);
         if (additionMatcher.matches()) {
             return Optional.of(String.valueOf(Integer.parseInt(additionMatcher.group(1))
                     + Integer.parseInt(additionMatcher.group(2))));
