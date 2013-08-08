@@ -23,7 +23,8 @@ public class ExtremeStartup extends HttpServlet {
     			new PMSolver(),
                 new PrimeNumberSolver(),
                 new SquareCubeSolver(),
-                new PesetaSolver());
+									       new PesetaSolver(),
+									       new PowerSolver());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
