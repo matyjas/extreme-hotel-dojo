@@ -19,7 +19,8 @@ public class ExtremeStartup extends HttpServlet {
     			new LargestNumberSolver(), 
     			new MultiplySolver(),
     			new BondMovieSolver(),
-    			new CitySolver());
+    			new CitySolver(),
+    			new PMSolver());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
