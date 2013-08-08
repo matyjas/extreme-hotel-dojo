@@ -15,13 +15,18 @@ import static com.google.common.collect.Lists.newArrayList;
 
 public class ExtremeStartup extends HttpServlet {
 
-    private static final List<Solver> solverChain = 
-	Lists.<Solver>newArrayList(new AddSolver(), new LargestNumberSolver(), new MultiplySolver(), new BondMovieSolver(),
-				   new SquareCubeSolver());
+    private static final List<Solver> solverChain = Lists.<Solver>newArrayList(new AddSolver(), 
+    			new LargestNumberSolver(), 
+    			new MultiplySolver(),
+    			new BondMovieSolver(),
+    			new CitySolver(),
+    			new PMSolver(),
+                new PrimeNumberSolver(),
+                new SquareCubeSolver(),
+                new PesetaSolver());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println(req.getParameter("q"));
         resp.getWriter().write(answer(req.getParameter("q")));
     }
 
@@ -36,6 +41,7 @@ public class ExtremeStartup extends HttpServlet {
                 return answer;
             }
         }
+        System.out.println(question);
         return "team name";
     }
 
