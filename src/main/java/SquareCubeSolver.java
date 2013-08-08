@@ -11,6 +11,10 @@ public class SquareCubeSolver implements Solver {
 
     static final Pattern PATTERN = Pattern.compile(".*which of the following numbers is both a square and a cube: ([\\d,\\s]+)");
 
+    public static double cubeRoot(double x) {  
+	return Math.pow(x, 1.0/3);  
+    }  
+
     @Override
     public Optional<String> answerTo(String question) {
 
@@ -25,10 +29,12 @@ public class SquareCubeSolver implements Solver {
 		
 		int queryNum = Integer.valueOf(splitNumberStr);
 		double sqrtOfQuery = Math.sqrt(queryNum);
+		double cubeRootOfQuery = cubeRoot(queryNum);
 
-		if (sqrtOfQuery == (int)sqrtOfQuery){
 
-		    return Optional.of(String.valueOf(sqrtOfQuery));
+		if ((sqrtOfQuery == (int)sqrtOfQuery) && (cubeRootOfQuery == (int)cubeRootOfQuery)) {
+
+		    return Optional.of(String.valueOf(queryNum));
 		}
 	    }
 	}
