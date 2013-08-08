@@ -18,8 +18,8 @@ public class BondMovieSolver implements Solver {
 
     @Override
     public Optional<String> answerTo(String question) {
-        Matcher additionMatcher = PATTERN.matcher(question);
-        if (additionMatcher.matches()) {
+        Matcher movieMatcher = PATTERN.matcher(question);
+        if (movieMatcher.matches()) {
             return Optional.of(SEAN_CONNERY);
         }
         return Optional.absent();
