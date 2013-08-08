@@ -10,17 +10,17 @@ import java.util.regex.Pattern;
  * Time: 18:12
  * To change this template use File | Settings | File Templates.
  */
-public class BondMovieSolver implements Solver {
+public class PMSolver implements Solver {
 
-    public static final Pattern PATTERN = Pattern.compile(".*who played James Bond in the film Dr No");
+    public static final Pattern PATTERN = Pattern.compile(".*who is the Prime Minister of Great Britain");
     
-    public static final String SEAN_CONNERY = "Sean Connery";
+    public static final String DAVID_CAMERON = "David Cameron";
 
     @Override
     public Optional<String> answerTo(String question) {
         Matcher movieMatcher = PATTERN.matcher(question);
         if (movieMatcher.matches()) {
-            return Optional.of(SEAN_CONNERY);
+            return Optional.of(DAVID_CAMERON);
         }
         return Optional.absent();
     }
