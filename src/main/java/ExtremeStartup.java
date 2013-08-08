@@ -15,7 +15,7 @@ import static com.google.common.collect.Lists.newArrayList;
 
 public class ExtremeStartup extends HttpServlet {
 
-    private static final List<Solver> solverChain = Lists.<Solver>newArrayList(new AddSolver(), new LargestNumberSolver(), new MultiplySolver());
+    private static final List<Solver> solverChain = Lists.<Solver>newArrayList(new AddSolver(), new LargestNumberSolver(), new MultiplySolver(), new BondMovieSolver());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
